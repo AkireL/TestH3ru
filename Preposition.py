@@ -1,6 +1,12 @@
 import re
 from Language import Language
 
+"""
+    
+    
+    @author Erika Leonor Basurto Munguia <iamdleonor@gmail.com>
+    @version 1.0.0
+"""
 class Preposition:
     def __init__(self, language:Language):
         self.language = language

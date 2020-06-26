@@ -1,15 +1,16 @@
+"""
+    
+    
+    @author Erika Leonor Basurto Munguia <iamdleonor@gmail.com>
+    @version 1.0.0
+"""
 class Text:
         
-    def wordInText(self, text):   
+    def getWords(self, text):   
         if(len(text) <= 0):
-            raise Exception('spam')
+            raise Exception('Empty string!!')
         else:
             return text.split()
         
 
-t = Text()
-try:
-    print(t.wordInText("gola"))
-except Exception as error:
-    print(error)
 

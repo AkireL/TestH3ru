@@ -1,9 +1,17 @@
 import re
 from Verb import Verb
 from Preposition import Preposition
+
+"""
+    
+    
+    @author Erika Leonor Basurto Munguia <iamdleonor@gmail.com>
+    @version 1.0.0
+"""
 class Numbers:
     def __init__(self, verb:Verb, preposition: Preposition):
         self.verb = verb
+        
         self.preposition = preposition
     
     alphabetDictionary = {
@@ -40,9 +48,8 @@ class Numbers:
         sum = 0
         for item in range(len(word)):
             v = (self.alphabetDictionary[ word[item]] )
-            positionValue = v * base ** item
+            positionValue = v * (base ** item)
             sum += positionValue
-            # print(f"{item}:" + word[item] + " = " + f"{v} * 20 ^ {item} = "+ f"{positionValue}")
         return sum
     
     """
@@ -53,10 +60,5 @@ class Numbers:
     def isPretty(self, value: int):
         minValue = 81827
         divided = 3
-        return value > minValue and value % divided == 0
+        return ((value >= minValue) and (value % divided == 0))
 
-# v = Numbers()
-# number = v.getValue("gxjrc")  
-# pretty = v.isPretty(number)
-# print(f"{number} is pretty: {pretty}")   
-        
