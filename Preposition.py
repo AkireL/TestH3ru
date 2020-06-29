@@ -10,6 +10,9 @@ from Language import Language
 class Preposition:
     def __init__(self, language:Language):
         self.language = language
+        self.patternOutherU = "u"
+        self.patternFooLetters = "[sxmpfd]$"
+        self.minLenghtPreposition = 6
         
     """
         The prepositions are the words of exactly 6 letters 
@@ -19,16 +22,16 @@ class Preposition:
         if(self.language.isInLanguage(word) == False):
             return False
         
-        if(not len(word) == 6):
+        if(not len(word) == self.minLenghtPreposition):
             return False
         
-        patronAlphabet = re.compile("u")
+        patronAlphabet = re.compile(self.patternOutherU)
         matchContainsU = patronAlphabet.search(word)
         
         if matchContainsU != None:
             return False
         
-        patronAlphabet = re.compile("[sxmpfd]$")
+        patronAlphabet = re.compile(self.patternFooLetters)
         matchEndsFooLetter = patronAlphabet.search(word)
         
         if matchEndsFooLetter == None:

@@ -10,7 +10,9 @@ from Language import Language
 class Verb:
     def __init__(self, language:Language):
         self.language = language
-    
+        self.minLenghtVerb = 6
+        self.patternEndWord = "[ocqnwyheljrgi]$"
+        self.patternStartToEndWord = "^[ocqnwyheljrgi][sxocqnmwpfyheljrdgui]*[ocqnwyheljrgi]$"
     """
         verbs are words of 6 letters or more that end in a bar letter
     """
@@ -18,10 +20,10 @@ class Verb:
         if(self.language.isInLanguage(word) == False):
             return False
         
-        if(len(word) < 6):
+        if(len(word) < self.minLenghtVerb):
             return False
         
-        patronAlphabet = re.compile("^[ocqnwyheljrgi][sxocqnmwpfyheljrdgui]*[ocqnwyheljrgi]$")
+        patronAlphabet = re.compile(self.patternStartToEndWord)
         value = patronAlphabet.search(word)
         if value == None:
             return False
@@ -33,10 +35,10 @@ class Verb:
         if(self.language.isInLanguage(word) == False):
             return False
         
-        if(len(word) < 6):
+        if(len(word) < self.minLenghtVerb):
             return False
         
-        patronAlphabet = re.compile("[ocqnwyheljrgi]$")
+        patronAlphabet = re.compile(self.patternEndWord)
         matchEndsBarLetter = patronAlphabet.search(word)
         if matchEndsBarLetter == None:
             return False
