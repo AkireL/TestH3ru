@@ -1,11 +1,18 @@
 import re
 import sys
+import os
 
-from Language import Language
-from Verb import Verb
-from Preposition import Preposition
-from Numbers import Numbers
-import Constant
+PACKAGE_PARENT = '..'
+SCRIPT_DIR = os.path.dirname(os.path.realpath(os.path.join(os.getcwd(), os.path.expanduser(__file__))))
+sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
+
+from source.code.Language import Language
+from source.code.Verb import Verb
+from source.code.Preposition import Preposition
+from source.code.Numbers import Numbers
+# import source.code.Constant
+from source.code import Constant
+
 
 """
     

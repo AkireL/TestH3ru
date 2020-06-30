@@ -35,5 +35,5 @@ Heruglons consider a number to be pretty if it satisfies all of the following pr
 
 ### How to run the script?
 ```bash
-python Main.py
+python -m source.Main
 ```

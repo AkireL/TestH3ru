@@ -1,4 +1,4 @@
-from Translate import Translate
+from source.code.Translate import Translate
 
 """
     

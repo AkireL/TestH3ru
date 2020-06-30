@@ -1,6 +1,13 @@
 import re
-from Verb import Verb
-from Preposition import Preposition
+import sys
+import os
+
+PACKAGE_PARENT = '..'
+SCRIPT_DIR = os.path.dirname(os.path.realpath(os.path.join(os.getcwd(), os.path.expanduser(__file__))))
+sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
+
+from source.code.Verb import Verb
+from source.code.Preposition import Preposition
 
 """
     
@@ -47,7 +54,7 @@ class Numbers:
         base = 20
         sum = 0
         for item in range(len(word)):
-            v = (self.alphabetDictionary[ word[item]] )
+            v = (self.alphabetDictionary[word[item]] )
             positionValue = v * (base ** item)
             sum += positionValue
         return sum
